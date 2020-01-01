@@ -13,8 +13,7 @@ after_success:
   - docker build -t docker4vkrish/multi-nginx ./nginx
   - docker build -t docker4vkrish/multi-server ./server
   - docker build -t docker4vkrish/multi-worker ./worker
-  #Take those images and push to docker hub. First login to docker-cli
-  #encrypt the travis CI in Settings/Environment variables
+  
   #docker login
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # now push those images
