@@ -18,7 +18,7 @@ after_success:
  
   - docker images
   # now push those images
-  - docker push docker4vkrish/multi-client
+  - docker push dockerrepo4vignesh/multi-client
   - docker push docker4vkrish/multi-nginx
   - docker push docker4vkrish/multi-server
   - docker push docker4vkrish/multi-worker
