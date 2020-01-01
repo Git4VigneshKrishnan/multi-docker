@@ -16,7 +16,7 @@ after_success:
   - docker build -t docker4vkrish/multi-server ./server
   - docker build -t docker4vkrish/multi-worker ./worker  
  
-  - docker ps
+  - docker images
   # now push those images
   - docker push docker4vkrish/multi-client
   - docker push docker4vkrish/multi-nginx
