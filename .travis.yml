@@ -10,18 +10,19 @@ script:
 
 after_success:
    #docker login
-  - echo $DOCKER_PASSWORD | docker login --username $DOCKER_ID --password-stdin
-  - docker build -t docker4vkrish/multi-client ./client
-  - docker build -t docker4vkrish/multi-nginx ./nginx
-  - docker build -t docker4vkrish/multi-server ./server
-  - docker build -t docker4vkrish/multi-worker ./worker  
+  - echo "$DOCKER_PASSWORD"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" -password-stdin
+  - docker build -t $DOCKER_ID/multi-client ./client
+  - docker build -t $DOCKER_ID/multi-nginx ./nginx
+  - docker build -t $DOCKER_ID/multi-server ./server
+  - docker build -t $DOCKER_ID/multi-worker ./worker  
  
   - docker images
   # now push those images
-  - docker push docker4vkrish/multi-client
-  - docker push docker4vkrish/multi-nginx
-  - docker push docker4vkrish/multi-server
-  - docker push docker4vkrish/multi-worker
+  - docker push $DOCKER_ID/multi-client
+  - docker push $DOCKER_ID/multi-nginx
+  - docker push $DOCKER_ID/multi-server
+  - docker push $DOCKER_ID/multi-worker
 
 
 
