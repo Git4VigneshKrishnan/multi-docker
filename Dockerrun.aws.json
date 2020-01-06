@@ -1,0 +1,37 @@
+{
+	"AWSEBDockerrunVersion" : 2,
+	"containerDefinitions": [
+		{
+			"name" : "client",
+			"image": "docker4vkrish/multi-client",
+			"hostname": "client",
+			"essential": false
+		},
+		{
+			"name": "server",
+			"image" : "docker4vkrish/multi-server",
+			"hostname": "api",
+			"essential": false
+		},
+		{
+			"name": "worker",
+			"image": "docker4vkrish/multi-worker",
+			"hostname": "worker",
+			"essential": false
+		},
+		{
+			"name" : "nginx",
+			"image" : "docker4vkrish/nginx",
+			"hostname": "nginx",
+			"essential": true,
+			"portMappings" : [
+				{
+					"hostPort": 80,
+					"containerPort": 80
+				}
+			],
+			"links": ["client", "server"]
+		}
+	]
+
+}
