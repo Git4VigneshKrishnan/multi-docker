@@ -24,7 +24,7 @@
 		},
 		{
 			"name" : "nginx",
-			"image" : "docker4vkrish/nginx",
+			"image" : "docker4vkrish/multi-nginx",
 			"hostname": "nginx",
 			"essential": true,
 			"portMappings" : [
