@@ -24,6 +24,7 @@ after_success:
   - docker push $DOCKER_ID/multi-server
   - docker push $DOCKER_ID/multi-worker
 
+#deploy script
 deploy:
   provider: elasticbeanstalk
   region: us-east-1
